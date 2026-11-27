@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form</title>
+
+    <style>
+        #card {
+            background-color: lightgreen;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="form">
+        <h2>Contact Us</h2>
+
+        <input type="text" id="name" placeholder="Enter your name" required>
+        <br><br>
+
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <br><br>
+
+        <button onclick="submitForm()">Submit</button>
+    </div>
+
+    <div id="card"></div>
+
+<script>
+    function submitForm() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+
+        document.getElementById("form").style.display = "none";
+
+        document.getElementById("card").style.display = "block";
+
+        document.getElementById("card").innerHTML =
+            "<h2>Thank You!</h2><p>Name: " + name +
+            "</p><p>Email: " + email + "</p>";
+    }
+</script>
+
+</body>
+</html>
